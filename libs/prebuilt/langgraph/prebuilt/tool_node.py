@@ -1483,8 +1483,7 @@ class ToolNode(RunnableCallable):
                         f"{expected_id!r}."
                     )
                     raise ValueError(msg)
-                if item.tool_call_id == expected_id:
-                    terminator_count += 1
+                terminator_count += 1
             elif isinstance(item, Command) and isinstance(item.update, dict):
                 for msg in item.update.get(self._messages_key, []):
                     if isinstance(msg, ToolMessage) and msg.tool_call_id == expected_id:
