@@ -717,7 +717,7 @@ class ToolNode(RunnableCallable):
 
         ```python
         from typing_extensions import Annotated
-        from langchain.tools import InjectedState
+        from langgraph.prebuilt import InjectedState
 
         @tool
         def context_tool(query: str, state: Annotated[dict, InjectedState]) -> str:
@@ -1614,7 +1614,7 @@ def tools_condition(
         ```python
         from langgraph.graph import StateGraph
         from langgraph.prebuilt import ToolNode
-        from langchain.tools.tool_node import tools_condition
+        from langgraph.prebuilt import tools_condition
         from typing_extensions import TypedDict
 
 
@@ -1770,7 +1770,7 @@ class InjectedState(InjectedToolArg):
         from typing_extensions import Annotated, TypedDict
 
         from langchain_core.messages import BaseMessage, AIMessage
-        from langchain.tools import InjectedState, ToolNode, tool
+        from langgraph.prebuilt import InjectedState, ToolNode, tool
 
 
         class AgentState(TypedDict):
