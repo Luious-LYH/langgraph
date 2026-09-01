@@ -366,7 +366,7 @@ class ToolInvocationError(ToolException):
                 loc_str = ".".join(str(loc) for loc in error.get("loc", ()))
                 msg = error.get("msg", "Unknown error")
                 error_str_parts.append(f"{loc_str}: {msg}" if loc_str else msg)
-            error_display_str = "\n".join(error_str_parts)
+            error_display_str = "\n".join(error_str_parts) or "Tool arguments failed validation."
         else:
             error_display_str = str(source)
 
